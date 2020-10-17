@@ -2,5 +2,5 @@
     <string name="app_name">Hillforts</string>
     <string name="app_welcome">Welcome to Hillforts</string>
     <string name="hint_hillfortTitle">Hillfort Title</string>
-    <string name="button_addHillfort">Add Placemark</string>
+    <string name="button_addHillfort">Add Hillfort</string>
 </resources>
