@@ -13,11 +13,10 @@ import org.wit.hillforts.R
 class HillfortActivity : AppCompatActivity(), AnkoLogger {
 
   var hillfort = HillfortModel()
-  val app = MainApp? = null
+  var app : MainApp? = null
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
-    info("Hillfort Activity started..")
     setContentView(R.layout.activity_hillfort)
     app = application as MainApp
 
@@ -25,9 +24,9 @@ class HillfortActivity : AppCompatActivity(), AnkoLogger {
       hillfort.title = hillfortTitle.text.toString()
       hillfort.description = description.text.toString()
       if (hillfort.title.isNotEmpty()) {
-        app!!.add(hillfort.copy())
+        app!!.hillforts.add(hillfort.copy())
         info("add Button Pressed: ${hillfort}")
-        for (i in app!!.indices) {
+        for (i in app!!.hillforts.indices) {
           info("Hillfort[$i]:${app!!.hillforts[i]}")
         }
       }
