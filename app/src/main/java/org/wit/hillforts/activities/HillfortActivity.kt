@@ -10,6 +10,7 @@ import org.jetbrains.anko.AnkoLogger
 import org.jetbrains.anko.info
 import org.jetbrains.anko.toast
 import org.wit.hillfort.helpers.readImage
+import org.wit.hillfort.helpers.readImageFromPath
 import org.wit.hillfort.helpers.showImagePicker
 import org.wit.hillfort.main.MainApp
 import org.wit.hillfort.models.HillfortModel
@@ -39,6 +40,7 @@ class HillfortActivity : AppCompatActivity(), AnkoLogger {
       hillfort = intent.extras?.getParcelable<HillfortModel>("hillfort_edit")!!
       hillfortTitle.setText(hillfort.title)
       description.setText(hillfort.description)
+      hillfortImage.setImageBitmap(readImageFromPath(this, hillfort.image))
       btnAdd.setText(R.string.edit_hillfort)
     }
 
@@ -62,6 +64,7 @@ class HillfortActivity : AppCompatActivity(), AnkoLogger {
       }
 
     chooseImage.setOnClickListener {
+      //passing it in this activity, and the value 1-image request
       showImagePicker(this, IMAGE_REQUEST)
     }
 
@@ -87,6 +90,7 @@ class HillfortActivity : AppCompatActivity(), AnkoLogger {
     super.onActivityResult(requestCode, resultCode, data)
     when (requestCode) {
       IMAGE_REQUEST -> {
+        //if user has chosen something
         if (data != null) {
           hillfort.image = data.getData().toString()
           hillfortImage.setImageBitmap(readImage(this, resultCode, data))
