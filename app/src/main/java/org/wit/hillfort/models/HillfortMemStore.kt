@@ -24,10 +24,13 @@ class HillfortMemStore : HillfortStore, AnkoLogger {
     }
 
     override fun update(hillfort: HillfortModel) {
+        //looking for the match
         var foundHillfort: HillfortModel? = hillforts.find { p -> p.id == hillfort.id }
+        //if you find not null ie. a matych
         if (foundHillfort != null) {
             foundHillfort.title = hillfort.title
             foundHillfort.description = hillfort.description
+            foundHillfort.image = hillfort.image
             logAll()
         }
     }
