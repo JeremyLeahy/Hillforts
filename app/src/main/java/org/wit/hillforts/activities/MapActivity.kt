@@ -1,5 +1,7 @@
 package org.wit.hillforts.activities
 
+import android.app.Activity
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
@@ -8,13 +10,14 @@ import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.Marker
 import com.google.android.gms.maps.model.MarkerOptions
 import org.wit.hillfort.models.Location
 import org.wit.hillforts.R
 
-class MapActivity : AppCompatActivity(), OnMapReadyCallback {
+class MapActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarkerDragListener {
 
-    private lateinit var mMap: GoogleMap
+    private lateinit var map: GoogleMap
     var location = Location()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,9 +40,37 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
      * installed Google Play services and returned to the app.
      */
     override fun onMapReady(googleMap: GoogleMap) {
-        mMap = googleMap
+        map = googleMap
         val loc = LatLng(location.lat, location.lng)
-        mMap.addMarker(MarkerOptions().position(loc).title("Default Marker"))
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(loc, location.zoom))
+        val options = MarkerOptions()
+            .title("Hillfort")
+            .snippet("GPS : " + loc.toString())
+            .draggable(true)
+            .position(loc)
+        map.addMarker(options)
+        map.setOnMarkerDragListener(this)
+        map.moveCamera(CameraUpdateFactory.newLatLngZoom(loc, location.zoom))
     }
+
+
+    override fun onMarkerDragStart(marker: Marker) {
+    }
+
+    override fun onMarkerDrag(marker: Marker) {
+    }
+
+    override fun onMarkerDragEnd(marker: Marker) {
+        location.lat = marker.position.latitude
+        location.lng = marker.position.longitude
+        location.zoom = map.cameraPosition.zoom
+    }
+
+    override fun onBackPressed() {
+        val resultIntent = Intent()
+        resultIntent.putExtra("location", location)
+        setResult(Activity.RESULT_OK, resultIntent)
+        finish()
+        super.onBackPressed()
+    }
+
 }
