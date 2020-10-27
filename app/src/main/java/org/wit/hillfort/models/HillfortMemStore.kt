@@ -40,7 +40,13 @@ class HillfortMemStore : HillfortStore, AnkoLogger {
         }
     }
 
+    override fun delete(hillfort: HillfortModel) {
+        hillforts.remove(hillfort)
+    }
+
     fun logAll() {
         hillforts.forEach{ info("${it}") }
     }
+
+
 }
