@@ -32,7 +32,7 @@ class HillfortActivity : AppCompatActivity(), AnkoLogger {
 
     toolbarAdd.title = title
     setSupportActionBar(toolbarAdd)
-    info("Placemark Activity started..")
+    info("Hillfort Activity started..")
 
 
     app = application as MainApp
@@ -109,7 +109,7 @@ class HillfortActivity : AppCompatActivity(), AnkoLogger {
     }
     return super.onOptionsItemSelected(item)
   }
-
+//
   override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
     super.onActivityResult(requestCode, resultCode, data)
     when (requestCode) {
