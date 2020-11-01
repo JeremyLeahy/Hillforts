@@ -47,7 +47,7 @@ class HillfortActivity : AppCompatActivity(), AnkoLogger {
       hillfortImage.setImageBitmap(readImageFromPath(this, hillfort.image))
       if (hillfort.image != null) {
 
-        chooseImage.setText(R.string.change_hillfort_image)
+        chooseImage.setText(R.string.add_hillfort_image)
       }
       btnAdd.setText(R.string.edit_hillfort)
     }
@@ -118,7 +118,7 @@ class HillfortActivity : AppCompatActivity(), AnkoLogger {
         if (data != null) {
           hillfort.image = data.getData().toString()
           hillfortImage.setImageBitmap(readImage(this, resultCode, data))
-          chooseImage.setText(R.string.change_hillfort_image)
+          chooseImage.setText(R.string.add_hillfort_image)
         }
       }
       LOCATION_REQUEST -> {

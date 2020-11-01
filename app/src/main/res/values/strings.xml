@@ -10,6 +10,7 @@
     <string name="save_hillfort"> Save Hillfort </string>
     <string name="edit_hillfort"> Update Hillfort </string>
     <string name="button_addImage"> Add Image </string>
+    <string name="add_hillfort_image"> Add Hillfort Image </string>
     <string name="select_hillfort_image">Select hillfort image</string>
     <string name="change_hillfort_image">Change hillfort image</string>
     <string name="button_location">Set Location</string>
@@ -17,4 +18,5 @@
     <string name="menu_deleteHillfort">Delete</string>
     <string name="deleted_hillfort">Hillfort Deleted</string>
     <string name="project_hillfort">Project Hillfort</string>
+    <string name="designer">Designed by Jeremy Leahy</string>
 </resources>
