@@ -29,13 +29,13 @@ class HillfortActivity : AppCompatActivity(), AnkoLogger {
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.activity_hillfort)
-
     toolbarAdd.title = title
     setSupportActionBar(toolbarAdd)
+    supportActionBar?.setDisplayHomeAsUpEnabled(true)
     info("Hillfort Activity started..")
 
-
     app = application as MainApp
+
 
     var edit = false
   //this code is called when we click on the hillfort list card-listbox
