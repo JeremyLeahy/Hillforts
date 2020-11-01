@@ -6,26 +6,26 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/grey">
+    android:background="@color/colorGreen">
 
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="250dp"
-        android:src="@drawable/ic_launcher_background"
+        android:layout_marginTop="25dp"
+        android:src="@drawable/hillfort"
         app:srcCompat="@android:drawable/sym_def_app_icon" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/project_hillfort"
+        android:text="Project Hillfort"
         android:textSize="20dp"
         android:textStyle="bold"
         android:gravity="center"
-        android:textColor="@color/colorPrimaryDark"
+        android:textColor="@color/colorPrimary"
         android:layout_below="@id/imageView"
         android:padding="30dp"/>
 
@@ -35,7 +35,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/textView"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="80dp"
         android:indeterminateTint="@color/colorPrimaryDark"/>
 
     <TextView
@@ -44,10 +44,10 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/progressBar"
         android:gravity="center"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="100dp"
         android:padding="15dp"
         android:text="Designed by Jeremy Leahy"
-        android:textColor="@color/colorPrimaryDark"
+        android:textColor="@color/colorPrimary"
         android:textSize="15dp"
         android:textStyle="bold"
         android:textAlignment="center"/>
