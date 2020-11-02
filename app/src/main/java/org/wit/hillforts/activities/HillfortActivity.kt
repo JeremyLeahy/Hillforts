@@ -24,6 +24,8 @@ class HillfortActivity : AppCompatActivity(), AnkoLogger {
   lateinit var app: MainApp
   val IMAGE_REQUEST = 1
   val LOCATION_REQUEST = 2
+  var image_number = 0
+
   //var location = Location(52.245696, -7.139102, 15f)
 
   override fun onCreate(savedInstanceState: Bundle?) {
@@ -44,13 +46,29 @@ class HillfortActivity : AppCompatActivity(), AnkoLogger {
       hillfort = intent.extras?.getParcelable<HillfortModel>("hillfort_edit")!!
       hillfortTitle.setText(hillfort.title)
       description.setText(hillfort.description)
-      hillfortImage.setImageBitmap(readImageFromPath(this, hillfort.image))
-      if (hillfort.image != null) {
+      if(hillfort.images.size > 0 )
+        hillfortImage.setImageBitmap(readImageFromPath(this, hillfort.images[0]))
+      if(hillfort.images.size > 1)
+        hillfortImage2.setImageBitmap(readImageFromPath(this, hillfort.images[1]))
+      if (hillfort.images.size <=1) {
 
         chooseImage.setText(R.string.add_hillfort_image)
       }
       btnAdd.setText(R.string.edit_hillfort)
     }
+
+    //if you click on the image, it checks the hillfort images size
+    //hillfortImage.setOnClickListener(){
+  //checking to see what the image number was that I have stored
+      //if (image_number >= hillfort.images.size ){
+        //set it back to zero
+        //image_number=0;
+     // }
+
+      //hillfortImage.setImageBitmap(readImageFromPath(this, hillfort.images[image_number]))
+      //image_number++;
+
+    //}
 
     btnAdd.setOnClickListener() {
       hillfort.title = hillfortTitle.text.toString()
@@ -117,6 +135,9 @@ class HillfortActivity : AppCompatActivity(), AnkoLogger {
         //if user has chosen something
         if (data != null) {
           hillfort.image = data.getData().toString()
+          if(hillfort.images.size < 2)
+            hillfort.images.add(data.getData().toString())
+          else toast("No more images can be added")
           hillfortImage.setImageBitmap(readImage(this, resultCode, data))
           chooseImage.setText(R.string.add_hillfort_image)
         }
