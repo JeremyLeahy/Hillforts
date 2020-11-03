@@ -60,9 +60,9 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
                     android:hint="@string/hint_hillfortDescription"
-                    android:inputType="text"
-                    android:maxLength="200"
-                    android:maxLines="4"
+                    android:inputType="textMultiLine"
+                    android:maxLength="300"
+                    android:maxLines="6"
                     android:padding="8dp"
                     android:textColor="@color/colorPrimaryDark"
                     android:textSize="14sp" />
