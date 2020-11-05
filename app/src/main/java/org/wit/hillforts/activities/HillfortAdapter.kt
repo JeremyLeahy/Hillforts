@@ -40,6 +40,7 @@ class HillfortAdapter constructor(
         fun bind(hillfort: HillfortModel, listener: HillfortListener) {
             itemView.hillfortTitle.text = hillfort.title
             itemView.description.text = hillfort.description
+            itemView.hillfortLoc.text = "Latitude:  "  +  hillfort.lat  +  ",\nLongitude:  " + hillfort.lng
             if(hillfort.images.size > 0)
                 itemView.imageIcon.setImageBitmap(readImageFromPath(itemView.context, hillfort.images[0]))
             itemView.setOnClickListener { listener.onHillfortClick(hillfort) }

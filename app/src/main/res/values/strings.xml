@@ -19,4 +19,6 @@
     <string name="deleted_hillfort">Hillfort Deleted</string>
     <string name="project_hillfort">Project Hillfort</string>
     <string name="designer">Designed by Jeremy Leahy</string>
+    <string name="hint_lat">Latitude</string>
+    <string name="hint_long">Longitude</string>
 </resources>

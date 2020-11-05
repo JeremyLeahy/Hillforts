@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import kotlinx.android.synthetic.main.activity_hillfort.*
+import kotlinx.android.synthetic.main.card_hillfort.view.*
 import org.jetbrains.anko.AnkoLogger
 import org.jetbrains.anko.info
 import org.jetbrains.anko.intentFor
@@ -46,6 +47,8 @@ class HillfortActivity : AppCompatActivity(), AnkoLogger {
       hillfort = intent.extras?.getParcelable<HillfortModel>("hillfort_edit")!!
       hillfortTitle.setText(hillfort.title)
       description.setText(hillfort.description)
+      lat.setText(hillfort.lat.toString())
+      longitude.setText(hillfort.lng.toString())
       if(hillfort.images.size > 0 )
         hillfortImage.setImageBitmap(readImageFromPath(this, hillfort.images[0]))
       if(hillfort.images.size > 1)
