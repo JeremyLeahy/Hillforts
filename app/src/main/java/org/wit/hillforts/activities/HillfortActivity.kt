@@ -53,7 +53,12 @@ class HillfortActivity : AppCompatActivity(), AnkoLogger {
         hillfortImage.setImageBitmap(readImageFromPath(this, hillfort.images[0]))
       if(hillfort.images.size > 1)
         hillfortImage2.setImageBitmap(readImageFromPath(this, hillfort.images[1]))
-      if (hillfort.images.size <=1) {
+      if(hillfort.images.size > 2)
+        hillfortImage3.setImageBitmap(readImageFromPath(this, hillfort.images[2]))
+      if(hillfort.images.size > 3)
+        hillfortImage4.setImageBitmap(readImageFromPath(this, hillfort.images[3]))
+
+      if (hillfort.images.size <=3) {
 
         chooseImage.setText(R.string.add_hillfort_image)
       }
@@ -138,7 +143,7 @@ class HillfortActivity : AppCompatActivity(), AnkoLogger {
         //if user has chosen something
         if (data != null) {
           hillfort.image = data.getData().toString()
-          if(hillfort.images.size < 2)
+          if(hillfort.images.size < 4)
             hillfort.images.add(data.getData().toString())
           else toast("No more images can be added")
           hillfortImage.setImageBitmap(readImage(this, resultCode, data))
