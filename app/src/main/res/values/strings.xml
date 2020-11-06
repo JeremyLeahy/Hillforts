@@ -21,4 +21,9 @@
     <string name="designer">Designed by Jeremy Leahy</string>
     <string name="hint_lat">Latitude</string>
     <string name="hint_long">Longitude</string>
+    <string name="signup_title">Sign Up</string>
+    <string name="hint_email">email address</string>
+    <string name="hint_password">password</string>
+    <string name="button_signup">Sign up</string>
+
 </resources>
