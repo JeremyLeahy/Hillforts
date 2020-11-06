@@ -82,9 +82,7 @@
                     android:maxLines="1"
                     android:padding="8dp"
                     android:textColor="@color/colorPrimaryDark"
-                    android:textSize="14sp"
-                    />
-
+                    android:textSize="14sp" />
 
 
                 <Button

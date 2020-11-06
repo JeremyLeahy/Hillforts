@@ -25,5 +25,7 @@
     <string name="hint_email">email address</string>
     <string name="hint_password">password</string>
     <string name="button_signup">Sign up</string>
+    <string name="enter_newEmail"> Enter Email Address</string>
+    <string name="enter_newPassword"> Enter a Password</string>
 
 </resources>
