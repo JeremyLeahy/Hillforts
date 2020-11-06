@@ -41,7 +41,7 @@ class HillfortActivity : AppCompatActivity(), AnkoLogger {
 
 
     var edit = false
-  //this code is called when we click on the hillfort list card-listbox
+    //this code is called when we click on the hillfort list card-listbox
     if (intent.hasExtra("hillfort_edit")) {
       edit = true
       hillfort = intent.extras?.getParcelable<HillfortModel>("hillfort_edit")!!
