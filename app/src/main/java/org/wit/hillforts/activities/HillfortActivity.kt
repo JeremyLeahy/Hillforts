@@ -17,6 +17,7 @@ import org.wit.hillfort.helpers.showImagePicker
 import org.wit.hillfort.main.MainApp
 import org.wit.hillfort.models.HillfortModel
 import org.wit.hillfort.models.Location
+import org.wit.hillfort.models.UserModel
 import org.wit.hillforts.R
 
 class HillfortActivity : AppCompatActivity(), AnkoLogger {
@@ -26,6 +27,7 @@ class HillfortActivity : AppCompatActivity(), AnkoLogger {
   val IMAGE_REQUEST = 1
   val LOCATION_REQUEST = 2
   var image_number = 0
+  var user = UserModel()
 
   //var location = Location(52.245696, -7.139102, 15f)
 
@@ -63,6 +65,10 @@ class HillfortActivity : AppCompatActivity(), AnkoLogger {
         chooseImage.setText(R.string.add_hillfort_image)
       }
       btnAdd.setText(R.string.edit_hillfort)
+    }
+
+    if (intent.hasExtra("user")) {
+      user = intent.extras?.getParcelable("user")!!
     }
 
     //if you click on the image, it checks the hillfort images size

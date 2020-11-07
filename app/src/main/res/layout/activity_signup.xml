@@ -52,6 +52,39 @@
                     android:textStyle="bold"
                     android:textSize="20sp" />
 
+
+                <!-- First Name Field -->
+
+                <EditText
+                    android:id="@+id/signup_firstName"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_margin="8dp"
+                    android:autofillHints=""
+                    android:hint="@string/hint_firstName"
+                    android:inputType="text"
+                    android:maxLength="40"
+                    android:maxLines="1"
+                    android:padding="8dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="14sp" />
+
+                <!-- Last Name Field -->
+
+                <EditText
+                    android:id="@+id/signup_lastName"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_margin="8dp"
+                    android:autofillHints=""
+                    android:hint="@string/hint_lastName"
+                    android:inputType="text"
+                    android:maxLength="40"
+                    android:maxLines="1"
+                    android:padding="8dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="14sp" />
+
                 <!-- Email Field -->
                 <EditText
                     android:id="@+id/signup_email"

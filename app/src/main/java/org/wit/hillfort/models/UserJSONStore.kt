@@ -30,7 +30,7 @@ class UserJSONStore : UserStore, AnkoLogger {
     }
 
     // Function returns a list of all users in the Users Array
-    override fun findAll(): MutableList<UserModel> {
+    override fun findAllUsers(): MutableList<UserModel> {
         return users
     }
 
@@ -50,7 +50,17 @@ class UserJSONStore : UserStore, AnkoLogger {
         return false
     }
 
-
+    override fun updateUser(user: UserModel) {
+        var foundUser: UserModel? = users.find { p -> p.id == user.id }
+        //if you find not null ie. a match
+        if (foundUser != null) {
+            foundUser.firstName = user.firstName
+            foundUser.lastName = user.lastName
+            foundUser.email = user.email
+            foundUser.password = user.password
+            serialize()
+        }
+    }
 
     override fun create(user: UserModel) {
         user.id = generateRandomUserId()

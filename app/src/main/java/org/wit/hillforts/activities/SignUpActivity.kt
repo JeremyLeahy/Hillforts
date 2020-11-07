@@ -33,6 +33,8 @@ class SignUpActivity: AppCompatActivity(), AnkoLogger {
 
 
             //taken from activity_signup.xml
+            user.firstName = signup_firstName.text.toString()
+            user.lastName = signup_lastName.text.toString()
             user.email = signup_email.text.toString()
             user.password = signup_password.text.toString()
 

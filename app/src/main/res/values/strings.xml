@@ -32,4 +32,6 @@
     <string name="email_not_found"> Email address not found</string>
     <string name="menu_logout">Logout</string>
     <string name="logout">User logged out</string>
+    <string name="hint_firstName"> First Name</string>
+    <string name="hint_lastName"> First Name</string>
 </resources>

@@ -11,11 +11,13 @@ import org.jetbrains.anko.startActivityForResult
 import org.jetbrains.anko.toast
 import org.wit.hillfort.main.MainApp
 import org.wit.hillfort.models.HillfortModel
+import org.wit.hillfort.models.UserModel
 import org.wit.hillforts.R
 
 class HillfortListActivity : AppCompatActivity(), HillfortListener  {
 
     lateinit var app: MainApp
+    var user = UserModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -59,7 +61,11 @@ class HillfortListActivity : AppCompatActivity(), HillfortListener  {
     }
     //
     override fun onHillfortClick(hillfort: HillfortModel) {
-        startActivityForResult(intentFor<HillfortActivity>().putExtra("hillfort_edit", hillfort) ,0)
+        val intent = Intent(this, HillfortActivity::class.java)
+        intent.putExtra("user", user)
+        intent.putExtra("hillfort_edit", hillfort)
+        startActivityForResult(intent, 0)
+        //startActivityForResult(intentFor<HillfortActivity>().putExtra("hillfort_edit", hillfort) ,0)
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
