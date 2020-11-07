@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_hillfort_list.*
 import org.jetbrains.anko.intentFor
 import org.jetbrains.anko.startActivityForResult
+import org.jetbrains.anko.toast
 import org.wit.hillfort.main.MainApp
 import org.wit.hillfort.models.HillfortModel
 import org.wit.hillforts.R
@@ -45,7 +46,14 @@ class HillfortListActivity : AppCompatActivity(), HillfortListener  {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item?.itemId) {
-            R.id.item_add -> startActivityForResult<HillfortActivity>(0)
+            R.id.item_add -> {
+                startActivityForResult<HillfortActivity>(0)
+            }
+            R.id.user_logout -> {
+                startActivityForResult<LoginActivity>(0)
+                toast(R.string.logout)
+                finish()
+            }
         }
         return super.onOptionsItemSelected(item)
     }

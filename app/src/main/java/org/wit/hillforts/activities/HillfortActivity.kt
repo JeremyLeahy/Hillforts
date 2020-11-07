@@ -132,6 +132,11 @@ class HillfortActivity : AppCompatActivity(), AnkoLogger {
         toast(R.string.deleted_hillfort)
         finish()
       }
+
+      R.id.user_logout -> {
+        startActivityForResult(intentFor<LoginActivity>(),0)
+        toast(R.string.logout)
+      }
     }
     return super.onOptionsItemSelected(item)
   }
