@@ -25,6 +25,18 @@
             android:parentActivityName=".activities.HillfortListActivity">
         </activity>
 
+        <!--   LOGIN ACTIVITY  -->
+        <activity
+            android:name=".activities.LoginActivity"
+            android:parentActivityName=".activities.HillfortListActivity">
+        </activity>
+
+        <!--   SIGNUP ACTIVITY  -->
+        <activity
+            android:name=".activities.SignUpActivity"
+            android:parentActivityName=".activities.HillfortListActivity">
+        </activity>
+
      <!--   HILLFORT ACTIVITY  -->
         <activity
             android:name=".activities.HillfortActivity"
@@ -45,8 +57,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-
     </application>
 
 </manifest>
