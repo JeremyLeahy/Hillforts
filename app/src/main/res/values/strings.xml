@@ -27,5 +27,7 @@
     <string name="button_signup">Sign up</string>
     <string name="enter_newEmail"> Enter Email Address</string>
     <string name="enter_newPassword"> Enter a Password</string>
-
+    <string name="login_title"> Login</string>
+    <string name="button_login"> Login</string>
+    <string name="email_not_found"> Email address not found</string>
 </resources>
