@@ -49,6 +49,7 @@ class HillfortActivity : AppCompatActivity(), AnkoLogger {
       hillfort = intent.extras?.getParcelable<HillfortModel>("hillfort_edit")!!
       hillfortTitle.setText(hillfort.title)
       description.setText(hillfort.description)
+      visited.isChecked = hillfort.visited
       lat.setText(hillfort.lat.toString())
       longitude.setText(hillfort.lng.toString())
       if(hillfort.images.size > 0 )
@@ -87,6 +88,7 @@ class HillfortActivity : AppCompatActivity(), AnkoLogger {
     btnAdd.setOnClickListener() {
       hillfort.title = hillfortTitle.text.toString()
       hillfort.description = description.text.toString()
+      hillfort.visited = visited.isChecked
       if (hillfort.title.isEmpty()) {
         //called from strings.xml
         toast(R.string.enter_hillfort_title)
