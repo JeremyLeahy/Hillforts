@@ -39,7 +39,7 @@ class HillfortAdapter constructor(
 
         fun bind(hillfort: HillfortModel, listener: HillfortListener) {
             itemView.hillfortTitle.text = hillfort.title
-            itemView.description.text = hillfort.description
+            //itemView.description.text = hillfort.description
             itemView.hillfortVisited.isChecked = hillfort.visited
             itemView.hillfortLoc.text = "Latitude:  "  +  hillfort.lat  +  ",\nLongitude:  " + hillfort.lng
             if(hillfort.images.size > 0)
