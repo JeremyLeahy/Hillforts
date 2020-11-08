@@ -2,8 +2,6 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-
-
     <item
         android:id="@+id/item_cancel"
         android:title="@string/menu_cancelHillfort"
@@ -11,20 +9,7 @@
         app:showAsAction="always"/>
 
     <item
-        android:id="@+id/item_delete"
-        android:icon="@drawable/ic_baseline_delete_24"
-        android:title="@string/menu_deleteHillfort"
-        app:showAsAction="always"/>
-
-    <item
-        android:id="@+id/item_settings"
-        android:icon="@drawable/ic_baseline_settings_24"
-        android:title="@string/menu_settings"
-        app:showAsAction="always" />
-
-    <item
         android:id="@+id/user_logout"
         android:title="@string/menu_logout"
-        app:showAsAction="always"/>
-
+        app:showAsAction="always" />
 </menu>

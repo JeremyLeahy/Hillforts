@@ -40,4 +40,7 @@
     <string name="desc_heading">Hillfort Description:</string>
     <string name="lat_heading">Latitude:</string>
     <string name="lng_heading">Longitude:</string>
+    <string name="account_settings">Account Settings</string>
+    <string name="update_user">Update User</string>
+    <string name="menu_settings">Settings</string>
 </resources>
