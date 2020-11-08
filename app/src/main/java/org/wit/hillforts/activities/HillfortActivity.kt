@@ -52,6 +52,7 @@ class HillfortActivity : AppCompatActivity(), AnkoLogger {
       visited.isChecked = hillfort.visited
       lat.setText(hillfort.lat.toString())
       longitude.setText(hillfort.lng.toString())
+      additionalHillfortNotes.setText(hillfort.additionalNotes)
       if(hillfort.images.size > 0 )
         hillfortImage.setImageBitmap(readImageFromPath(this, hillfort.images[0]))
       if(hillfort.images.size > 1)
@@ -89,6 +90,7 @@ class HillfortActivity : AppCompatActivity(), AnkoLogger {
       hillfort.title = hillfortTitle.text.toString()
       hillfort.description = description.text.toString()
       hillfort.visited = visited.isChecked
+      hillfort.additionalNotes = additionalHillfortNotes.text.toString()
       if (hillfort.title.isEmpty()) {
         //called from strings.xml
         toast(R.string.enter_hillfort_title)

@@ -14,6 +14,7 @@ data class HillfortModel(var id: Long = 0,
                          var lng: Double = 0.0,
                          var zoom: Float = 0f,
                          var visited: Boolean = false,
+                         var additionalNotes: String = "",
                          var user: UserModel = UserModel()) : Parcelable
 
 @Parcelize

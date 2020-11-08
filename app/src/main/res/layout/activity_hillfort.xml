@@ -201,6 +201,30 @@
                     android:textColor="@color/colorPrimary"
                     android:textSize="16sp" />
 
+                <TextView
+                    android:id="@+id/notesHeading"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="15dp"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorDarkGreen"
+                    android:text="@string/notes_heading" />
+
+                <EditText
+                    android:id="@+id/additionalHillfortNotes"
+                    android:layout_width="396dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:hint="@string/hint_additionalNotes"
+                    android:inputType="textMultiLine"
+                    android:maxLength="1000"
+                    android:maxLines="10"
+                    android:padding="8dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="14sp" />
+
                 <!-- Add Hillfort Icon -->
                 <Button
                     android:id="@+id/btnAdd"
