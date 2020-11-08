@@ -132,6 +132,15 @@
                     android:layout_height="wrap_content"
                     app:srcCompat="@mipmap/ic_launcher" />
 
+                <CheckBox
+                    android:id="@+id/visited"
+                    style="@style/Widget.AppCompat.CompoundButton.CheckBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:checked="false"
+                    android:text="@string/visited_checkbox" />
+
                 <Button
                     android:id="@+id/hillfortLocation"
                     android:layout_width="match_parent"

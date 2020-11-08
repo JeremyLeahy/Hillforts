@@ -35,4 +35,5 @@
     <string name="logout">User logged out</string>
     <string name="hint_firstName"> First Name</string>
     <string name="hint_lastName"> First Name</string>
+    <string name="visited_checkbox">Hillfort Visited</string>
 </resources>
