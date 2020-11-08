@@ -37,6 +37,12 @@
             android:parentActivityName=".activities.HillfortListActivity">
         </activity>
 
+        <!--   SETTINGS ACTIVITY  -->
+        <activity
+            android:name=".activities.SettingsActivity"
+            android:parentActivityName=".activities.HillfortListActivity">
+        </activity>
+
      <!--   HILLFORT ACTIVITY  -->
         <activity
             android:name=".activities.HillfortActivity"
