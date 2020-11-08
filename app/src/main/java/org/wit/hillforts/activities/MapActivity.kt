@@ -29,11 +29,13 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarkerD
 
     override fun onMapReady(googleMap: GoogleMap) {
         map = googleMap
-        map.getUiSettings().setZoomControlsEnabled(true)
+        //map.getUiSettings().setZoomControlsEnabled(true)
+        map.uiSettings.isZoomControlsEnabled = true
         val loc = LatLng(location.lat, location.lng)
         val options = MarkerOptions()
             .title("Hillfort")
-            .snippet("GPS : " + loc.toString())
+            //.snippet("GPS : " + loc.toString())
+            .snippet("GPS : $loc")
             .draggable(true)
             .position(loc)
         map.addMarker(options)

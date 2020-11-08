@@ -12,7 +12,7 @@ import org.wit.hillforts.R
 class LoginActivity: AppCompatActivity(){
 
     lateinit var app: MainApp
-    var user = UserModel()
+    private var user = UserModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,22 +24,20 @@ class LoginActivity: AppCompatActivity(){
 
 
         btnLogin.setOnClickListener() {
+
             user.email = email.text.toString()
             user.password = password.text.toString()
             var currentUser = app.users.authenticateUser(user)
-            if (currentUser == false) toast(getString(R.string.email_not_found))
+            if (!currentUser) toast(getString(R.string.email_not_found))
             else {
                 startActivity( intentFor<HillfortListActivity>().putExtra("user", user))
-
-
                 //startActivityForResult( intentFor<HillfortListActivity>().putExtra("user", user), 0)
                 //user = currentUser
                 //if (password.text.toString() == user.password)  startActivityForResult( intentFor<HillfortListActivity>().putExtra("User", user), 0)
                 //else toast(getString(R.string.incorrect_password))
             }
         }
-
-        //when button is pressed-goes to sign up page
+        //when button is pressed: goes to sign up page
         btnSignup.setOnClickListener() {
             startActivityForResult(intentFor<SignUpActivity>(), 0)
         }

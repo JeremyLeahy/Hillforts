@@ -17,7 +17,7 @@ import org.wit.hillforts.R
 class HillfortListActivity : AppCompatActivity(), HillfortListener  {
 
     lateinit var app: MainApp
-    var user = UserModel()
+    private var user = UserModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -51,6 +51,12 @@ class HillfortListActivity : AppCompatActivity(), HillfortListener  {
             R.id.item_add -> {
                 startActivityForResult<HillfortActivity>(0)
             }
+
+            /*
+            R.id.item_settings -> {
+                startActivityForResult<SettingsActivity>(0)
+            }
+            */
             R.id.user_logout -> {
                 startActivityForResult<LoginActivity>(0)
                 toast(R.string.logout)

@@ -16,13 +16,9 @@ class SplashActivity : AppCompatActivity(), AnkoLogger {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
 
-
         Handler().postDelayed({
-            // This method will be executed once the timer is over
-            // Start your app main activity
-
+            //once timer is over the Main activity will start
             startActivity(Intent(this, LoginActivity::class.java))
-
             // close this activity
             finish()
         }, SPLASH_TIME_OUT)
