@@ -34,6 +34,10 @@
     <string name="menu_logout">Logout</string>
     <string name="logout">User logged out</string>
     <string name="hint_firstName"> First Name</string>
-    <string name="hint_lastName"> First Name</string>
+    <string name="hint_lastName"> Last Name</string>
     <string name="visited_checkbox">Hillfort Visited</string>
+    <string name="name_heading">Hillfort Name:</string>
+    <string name="desc_heading">Hillfort Description:</string>
+    <string name="lat_heading">Latitude:</string>
+    <string name="lng_heading">Longitude:</string>
 </resources>

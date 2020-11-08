@@ -40,6 +40,17 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
+                <TextView
+                    android:id="@+id/nameHeading"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="15dp"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorDarkGreen"
+                    android:text="@string/name_heading" />
+
                 <EditText
                     android:id="@+id/hillfortTitle"
                     android:layout_width="match_parent"
@@ -54,6 +65,18 @@
                     android:textColor="@color/colorPrimaryDark"
                     android:textSize="14sp" />
 
+
+                <TextView
+                    android:id="@+id/descHeading"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="15dp"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorDarkGreen"
+                    android:text="@string/desc_heading" />
+
                 <EditText
                     android:id="@+id/description"
                     android:layout_width="396dp"
@@ -67,9 +90,21 @@
                     android:textColor="@color/colorPrimaryDark"
                     android:textSize="14sp" />
 
+                <TextView
+                    android:id="@+id/latHeading"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="15dp"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorDarkGreen"
+                    android:text="@string/lat_heading" />
+
+
                 <EditText
                     android:id="@+id/lat"
-                    android:layout_width="164dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
                     android:hint="@string/hint_lat"
@@ -80,9 +115,21 @@
                     android:textColor="@color/colorPrimaryDark"
                     android:textSize="14sp" />
 
+
+                <TextView
+                    android:id="@+id/lngHeading"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="15dp"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorDarkGreen"
+                    android:text="@string/lng_heading" />
+
                 <EditText
                     android:id="@+id/longitude"
-                    android:layout_width="164dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
                     android:hint="@string/hint_long"
