@@ -95,6 +95,7 @@ class HillfortActivity : AppCompatActivity(), AnkoLogger {
           app.hillforts.update(hillfort.copy())
         } else {
           app.hillforts.create(hillfort.copy())
+          toast(R.string.hillfort_added)
         }
       }
         info("add Button Pressed: ${hillfort}")
