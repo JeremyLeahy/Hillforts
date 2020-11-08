@@ -20,7 +20,7 @@ import org.wit.hillforts.R
 class SettingsActivity: AppCompatActivity(), AnkoLogger {
 
     lateinit var app: MainApp
-    var user = UserModel()
+    var updateUser = UserModel()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,27 +38,27 @@ class SettingsActivity: AppCompatActivity(), AnkoLogger {
 
 
             //taken from activity_signup.xml
-            user.firstName = signup_firstName.text.toString()
-            user.lastName = signup_lastName.text.toString()
-            user.email = signup_email.text.toString()
-            user.password = signup_password.text.toString()
+            updateUser.firstName = signup_firstName.text.toString()
+            updateUser.lastName = signup_lastName.text.toString()
+            updateUser.email = signup_email.text.toString()
+            updateUser.password = signup_password.text.toString()
 
 
-            if (user.email.isEmpty()) {
+            if (updateUser.email.isEmpty()) {
                 //called from strings.xml
                 toast(R.string.enter_newEmail)
 
-            } else if (user.password.isEmpty()) {
+            } else if (updateUser.password.isEmpty()) {
                 toast(R.string.enter_newPassword)
 
 
 
             } else {
-                app.users.create(user.copy())
-                info("new User created: ${user}")
+                app.users.create(updateUser.copy())
+                info("new User created: ${updateUser}")
             }
 
-            info("Sign Up Button Pressed: ${user}")
+            info("Sign Up Button Pressed: ${updateUser}")
 
             setResult(AppCompatActivity.RESULT_OK)
             finish()
