@@ -8,6 +8,7 @@ import com.google.android.gms.maps.*
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.Marker
 import com.google.android.gms.maps.model.MarkerOptions
+import kotlinx.android.synthetic.main.activity_hillfort_list.*
 import org.wit.hillfort.models.Location
 import org.wit.hillforts.R
 
@@ -24,6 +25,10 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarkerD
         val mapFragment = supportFragmentManager
             .findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
+
+        //toolbar.title = title
+        //setSupportActionBar(toolbar)
+        //supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
 

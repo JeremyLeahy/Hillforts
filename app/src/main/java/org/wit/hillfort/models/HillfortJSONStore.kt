@@ -5,6 +5,7 @@ import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.google.gson.reflect.TypeToken
 import org.jetbrains.anko.AnkoLogger
+import org.jetbrains.anko.info
 import org.wit.hillfort.helpers.*
 import java.util.*
 
@@ -30,6 +31,19 @@ class HillfortJSONStore : HillfortStore, AnkoLogger {
 
     override fun findAll(): MutableList<HillfortModel> {
         return hillforts
+    }
+
+    override fun findAllforUser(userModel: UserModel): MutableList<HillfortModel> {
+        var hillfortsforLoggedInUser = mutableListOf<HillfortModel>()
+        for (hill in hillforts) {
+            info("JSON STORE" + userModel )
+            //if we find one that matches, add that hillfort to hillfortForLoggedInUser
+            if (hill.user.email.equals(userModel.email)){
+                info(hill)
+                hillfortsforLoggedInUser.add(hill)
+            }
+        }
+        return hillfortsforLoggedInUser
     }
 
     override fun create(hillfort: HillfortModel) {

@@ -35,12 +35,21 @@ class UserJSONStore : UserStore, AnkoLogger {
     }
 
     override fun findUser(user: UserModel) : Boolean {
-        var foundUser: UserModel? = users.find{ p -> p.id == user.id }
+        var foundUser: UserModel? = users.find{ p -> p.userId == user.userId }
         if(foundUser != null) {
             return true
         }
         return false
     }
+
+    override fun findUserByEmail(email: String): UserModel? {
+        for (i in users) {
+            if (email == i.email)
+                return i
+        }
+        return null
+    }
+
     //authenticates user
     override fun authenticateUser(user: UserModel) : Boolean {
         var foundUser: UserModel? = users.find { p -> p.email == user.email && p.password == user.password}
@@ -51,19 +60,19 @@ class UserJSONStore : UserStore, AnkoLogger {
     }
 
     override fun updateUser(user: UserModel) {
-        var foundUser: UserModel? = users.find { p -> p.id == user.id }
+        var currentUser: UserModel? = users.find { p -> p.userId == user.userId }
         //if you find not null ie. a match
-        if (foundUser != null) {
-            foundUser.firstName = user.firstName
-            foundUser.lastName = user.lastName
-            foundUser.email = user.email
-            foundUser.password = user.password
+        if (currentUser != null) {
+            //currentUser.firstName = user.firstName
+            //currentUser.lastName = user.lastName
+            currentUser.email = user.email
+            currentUser.password = user.password
             serialize()
         }
     }
 
     override fun create(user: UserModel) {
-        user.id = generateRandomUserId()
+        user.userId = generateRandomUserId()
         users.add(user)
 
         serialize()

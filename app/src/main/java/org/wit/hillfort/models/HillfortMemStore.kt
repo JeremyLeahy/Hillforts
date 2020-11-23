@@ -17,6 +17,15 @@ class HillfortMemStore : HillfortStore, AnkoLogger {
         return hillforts
     }
 
+    override fun findAllforUser(userModel: UserModel): MutableList<HillfortModel> {
+        var hillfortsforLoggedInUser = mutableListOf<HillfortModel>()
+        for (hill in hillforts) {
+            if (hill.user == userModel)
+                hillfortsforLoggedInUser.add(hill)
+        }
+        return hillfortsforLoggedInUser
+    }
+
     override fun create(hillfort: HillfortModel) {
         hillfort.id = getId()
         hillforts.add(hillfort)

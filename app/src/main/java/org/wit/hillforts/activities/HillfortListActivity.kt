@@ -6,15 +6,13 @@ import android.view.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_hillfort_list.*
-import org.jetbrains.anko.intentFor
-import org.jetbrains.anko.startActivityForResult
-import org.jetbrains.anko.toast
+import org.jetbrains.anko.*
 import org.wit.hillfort.main.MainApp
 import org.wit.hillfort.models.HillfortModel
 import org.wit.hillfort.models.UserModel
 import org.wit.hillforts.R
 
-class HillfortListActivity : AppCompatActivity(), HillfortListener  {
+class HillfortListActivity : AppCompatActivity(), HillfortListener, AnkoLogger  {
 
     lateinit var app: MainApp
     private var user = UserModel()
@@ -24,16 +22,27 @@ class HillfortListActivity : AppCompatActivity(), HillfortListener  {
         setContentView(R.layout.activity_hillfort_list)
         app = application as MainApp
 
+
+
         toolbar.title = title
         setSupportActionBar(toolbar)
 
+        if (intent.hasExtra("user")) {
+            user = intent.extras?.getParcelable<UserModel>("user")!!
+            info("List" + user)
+        }
+
+        toolbar.title = title
+        setSupportActionBar(toolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
         val layoutManager = LinearLayoutManager(this)
         recyclerView.layoutManager = layoutManager
-        loadHillforts()
+        loadHillforts(user)
     }
 
-    private fun loadHillforts() {
-        showHillforts(app.hillforts.findAll())
+    private fun loadHillforts(userModel: UserModel) {
+        showHillforts(app.hillforts.findAllforUser(userModel))
     }
 
     fun showHillforts (hillforts: List<HillfortModel>) {
@@ -43,13 +52,15 @@ class HillfortListActivity : AppCompatActivity(), HillfortListener  {
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_main, menu)
+        //val menuUser: MenuItem = menu?.findItem(R.id.user_menu)!!
+        //menuUser.setTitle(user?.email)
         return super.onCreateOptionsMenu(menu)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item?.itemId) {
             R.id.item_add -> {
-                startActivityForResult<HillfortActivity>(0)
+                startActivityForResult(intentFor<HillfortActivity>().putExtra("user", user),0)
             }
 
             /*
@@ -75,7 +86,7 @@ class HillfortListActivity : AppCompatActivity(), HillfortListener  {
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        loadHillforts()
+        loadHillforts(user)
         super.onActivityResult(requestCode, resultCode, data)
     }
 

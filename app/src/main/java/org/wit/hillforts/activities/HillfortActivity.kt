@@ -36,7 +36,7 @@ class HillfortActivity : AppCompatActivity(), AnkoLogger {
     setContentView(R.layout.activity_hillfort)
     toolbarAdd.title = title
     setSupportActionBar(toolbarAdd)
-    supportActionBar?.setDisplayHomeAsUpEnabled(true)
+    //supportActionBar?.setDisplayHomeAsUpEnabled(true)
     info("Hillfort Activity started..")
 
     app = application as MainApp
@@ -87,6 +87,7 @@ class HillfortActivity : AppCompatActivity(), AnkoLogger {
     //}
 
     btnAdd.setOnClickListener() {
+      hillfort.user = user
       hillfort.title = hillfortTitle.text.toString()
       hillfort.description = description.text.toString()
       hillfort.visited = visited.isChecked
