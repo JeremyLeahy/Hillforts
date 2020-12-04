@@ -59,6 +59,11 @@ class SignUpActivity: AppCompatActivity(), AnkoLogger {
                 userMessage += getString(R.string.enter_Email) + '\n'
                 signup_email.setBackgroundResource(R.drawable.red_border)
             }
+            //validation ensuring two emails cannot be the same
+            if(app.users.findUserByEmail(user.email) != null){
+                userMessage += getString(R.string.user_exists)
+            }
+
             if (user.password.isEmpty()) {
                 //toast(getString(R.string.enter_Password))
                 userMessage += getString(R.string.enter_Password)

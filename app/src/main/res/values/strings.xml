@@ -61,4 +61,6 @@
     <string name="menu_userIcon">User</string>
 
     <string name="deleted_user">User Deleted</string>
+
+    <string name="user_exists">user already exists</string>
 </resources>
