@@ -53,7 +53,7 @@
                     android:textStyle="bold" />
 
                 <EditText
-                    android:id="@+id/email"
+                    android:id="@+id/update_email"
                     android:layout_width="match_parent"
                     android:layout_height="45dp"
                     android:layout_margin="8dp"
@@ -69,7 +69,7 @@
 
                 <!-- Password Field -->
                 <EditText
-                    android:id="@+id/password"
+                    android:id="@+id/update_password"
                     android:layout_width="match_parent"
                     android:layout_height="45dp"
                     android:layout_margin="8dp"

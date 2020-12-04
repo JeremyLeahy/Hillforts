@@ -7,12 +7,28 @@
         android:icon="@android:drawable/ic_menu_add"
         android:title="@string/menu_addHillfort"
         app:showAsAction="always" />
+
+
     -->
+<!--
+    <item
+        android:id="@+id/item_user"
+        android:icon="@drawable/ic_outline_person_outline_24"
+        android:title="@string/menu_userIcon"
+        app:showAsAction="always" />
+-->
+    <item
+        android:id="@+id/user_menu"
+        android:title=""
+        app:showAsAction="always"/>
+
     <item
         android:id="@+id/item_add"
         android:icon="@drawable/ic_baseline_add_circle_outline_24"
         android:title="@string/menu_addHillfort"
         app:showAsAction="always" />
+
+
 
     <item
         android:id="@+id/item_settings"

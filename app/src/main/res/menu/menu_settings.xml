@@ -9,6 +9,12 @@
         app:showAsAction="always"/>
 
     <item
+        android:id="@+id/user_delete"
+        android:icon="@drawable/ic_outline_person_remove_24"
+        android:title="@string/menu_deleteUser"
+        app:showAsAction="always"/>
+
+    <item
         android:id="@+id/user_logout"
         android:title="@string/menu_logout"
         app:showAsAction="always" />

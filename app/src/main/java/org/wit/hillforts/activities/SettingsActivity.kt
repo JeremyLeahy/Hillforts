@@ -2,6 +2,8 @@ package org.wit.hillforts.activities
 
 
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_hillfort.*
 import kotlinx.android.synthetic.main.activity_login.*
@@ -16,16 +18,21 @@ import org.jetbrains.anko.toast
 import org.wit.hillfort.main.MainApp
 import org.wit.hillfort.models.UserModel
 import org.wit.hillforts.R
+import androidx.appcompat.app.AlertDialog;
+import android.content.DialogInterface;
+import android.widget.Toast
 
 class SettingsActivity: AppCompatActivity(), AnkoLogger {
 
     lateinit var app: MainApp
-    var updateUser = UserModel()
+
+    var user = UserModel()
+    var loggedInUser = UserModel()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_signup)
+        setContentView(R.layout.activity_settings)
         toolbarAdd.title = title
         setSupportActionBar(toolbarAdd)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
@@ -34,35 +41,86 @@ class SettingsActivity: AppCompatActivity(), AnkoLogger {
         app = application as MainApp
 
 
+        info ("Update Activity Started")
+
+        if (intent.hasExtra("user"))
+        {
+            loggedInUser = intent.extras?.getParcelable<UserModel>("user")!!
+            //val currentUser = intent.extras?.getParcelable<UserModel>("User_edit")!!
+            //user = app.users.findUserByEmail(currentUser.email)!!
+            info("User: ")
+            info(loggedInUser)
+        }
+
         buttonUpdateUser.setOnClickListener() {
 
 
-            //taken from activity_signup.xml
-            updateUser.firstName = signup_firstName.text.toString()
-            updateUser.lastName = signup_lastName.text.toString()
-            updateUser.email = signup_email.text.toString()
-            updateUser.password = signup_password.text.toString()
+
+            //loggedInUser.firstName = signup_firstName.text.toString()
+            //loggedInUser.lastName = signup_lastName.text.toString()
+            loggedInUser.email = update_email.text.toString()
+            loggedInUser.password = update_password.text.toString()
 
 
-            if (updateUser.email.isEmpty()) {
+            if (loggedInUser.email.isEmpty()) {
                 //called from strings.xml
                 toast(R.string.enter_newEmail)
 
-            } else if (updateUser.password.isEmpty()) {
+            } else if (loggedInUser.password.isEmpty()) {
                 toast(R.string.enter_newPassword)
 
 
 
             } else {
-                app.users.create(updateUser.copy())
-                info("new User created: ${updateUser}")
+                app.users.updateUser(loggedInUser.copy())
+                toast(R.string.userDetails_updated)
+                info("User details updated: ${user}")
             }
 
-            info("Sign Up Button Pressed: ${updateUser}")
-
+            info("Sign Up Button Pressed: ${user}")
             setResult(AppCompatActivity.RESULT_OK)
             finish()
         }
 
+    }
+
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.menu_settings, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item?.itemId) {
+            R.id.item_cancel -> {
+                finish()
+            }
+
+            R.id.user_delete -> {
+
+/*
+                val builder = AlertDialog.Builder(this@SettingsActivity)
+                builder.setMessage("Are you sure you want to Delete?")
+                    .setCancelable(false)
+                    .setPositiveButton(
+                        "Yes")
+                         { dialog, id -> app.users.delete(loggedInUser) }
+                    .setNegativeButton("No", DialogInterface.OnClickListener { dialog, id -> dialog.cancel() })
+                val alert = builder.create()
+                alert.show()
+                */
+
+                toast(R.string.deleted_user)
+                startActivityForResult(intentFor<LoginActivity>(),0)
+                //finish()
+            }
+
+            R.id.user_logout -> {
+                startActivityForResult(intentFor<LoginActivity>(),0)
+                toast(R.string.logout)
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 }

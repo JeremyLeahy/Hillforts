@@ -54,4 +54,11 @@
     <string name="hint_password2">Re-enter password</string>
     <string name="password_mismatch">Passwords do not match </string>
     <string name="menu_cancelSignup">Cancel Signup</string>
+
+    <string name="userDetails_updated">User Details Updated</string>
+
+    <string name="menu_deleteUser">Delete</string>
+    <string name="menu_userIcon">User</string>
+
+    <string name="deleted_user">User Deleted</string>
 </resources>

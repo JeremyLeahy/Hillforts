@@ -30,7 +30,9 @@ class LoginActivity: AppCompatActivity(){
             var currentUser = app.users.authenticateUser(user)
             if (!currentUser) toast(getString(R.string.email_not_found))
             else {
-                startActivity( intentFor<HillfortListActivity>().putExtra("user", user))
+
+                var realUser = app.users.findUserByEmail(user.email)
+                startActivity( intentFor<HillfortListActivity>().putExtra("user", realUser))
                 //startActivityForResult( intentFor<HillfortListActivity>().putExtra("user", user), 0)
                 //user = currentUser
                 //if (password.text.toString() == user.password)  startActivityForResult( intentFor<HillfortListActivity>().putExtra("User", user), 0)

@@ -1,5 +1,6 @@
 package org.wit.hillforts.activities
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.view.*
@@ -50,10 +51,12 @@ class HillfortListActivity : AppCompatActivity(), HillfortListener, AnkoLogger  
         recyclerView.adapter?.notifyDataSetChanged()
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_main, menu)
-        //val menuUser: MenuItem = menu?.findItem(R.id.user_menu)!!
+        //val menuUser: MenuItem = menu?.findItem(R.id.user_name)!!
         //menuUser.setTitle(user?.email)
+        user_name.setText(user?.firstName + " " + user?.lastName)
         return super.onCreateOptionsMenu(menu)
     }
 
@@ -63,11 +66,11 @@ class HillfortListActivity : AppCompatActivity(), HillfortListener, AnkoLogger  
                 startActivityForResult(intentFor<HillfortActivity>().putExtra("user", user),0)
             }
 
-            /*
+
             R.id.item_settings -> {
-                startActivityForResult<SettingsActivity>(0)
+                startActivityForResult(intentFor<SettingsActivity>().putExtra("user", user),0)
             }
-            */
+
             R.id.user_logout -> {
                 startActivityForResult<LoginActivity>(0)
                 toast(R.string.logout)

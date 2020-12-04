@@ -8,4 +8,5 @@
     <color name="colorDarkGreen">#3A5E47</color>
     <color name="red">#F11660</color>
     <color name="border_color">#F11660</color>
+    <color name="name_color">#FFFFFF</color>
 </resources>
