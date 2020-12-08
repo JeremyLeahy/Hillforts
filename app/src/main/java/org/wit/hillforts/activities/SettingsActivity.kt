@@ -83,8 +83,7 @@ class SettingsActivity: AppCompatActivity(), AnkoLogger {
         }
 
     }
-
-
+    
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.menu_settings, menu)
         return super.onCreateOptionsMenu(menu)
@@ -99,21 +98,17 @@ class SettingsActivity: AppCompatActivity(), AnkoLogger {
 
             R.id.user_delete -> {
 
-/*
-                val builder = AlertDialog.Builder(this@SettingsActivity)
-                builder.setMessage("Are you sure you want to Delete?")
+                val builder = AlertDialog.Builder(this)
+                builder.setMessage("Are you sure you want to Delete User?")
                     .setCancelable(false)
                     .setPositiveButton(
                         "Yes")
-                         { dialog, id -> app.users.delete(loggedInUser) }
+                    { dialog, id -> app.users.delete(loggedInUser)
+                        toast(R.string.deleted_user)
+                        startActivityForResult(intentFor<LoginActivity>(),0)}
                     .setNegativeButton("No", DialogInterface.OnClickListener { dialog, id -> dialog.cancel() })
                 val alert = builder.create()
                 alert.show()
-                */
-
-                toast(R.string.deleted_user)
-                startActivityForResult(intentFor<LoginActivity>(),0)
-                //finish()
             }
 
             R.id.user_logout -> {

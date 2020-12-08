@@ -1,10 +1,12 @@
 package org.wit.hillforts.activities
 
+import android.content.DialogInterface
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import androidx.appcompat.app.AlertDialog
 import kotlinx.android.synthetic.main.activity_hillfort.*
 import kotlinx.android.synthetic.main.card_hillfort.view.*
 import org.jetbrains.anko.AnkoLogger
@@ -130,6 +132,7 @@ class HillfortActivity : AppCompatActivity(), AnkoLogger {
 
   override fun onCreateOptionsMenu(menu: Menu): Boolean {
     menuInflater.inflate(R.menu.menu_hillfort, menu)
+    user_name.setText(user?.firstName + " " + user?.lastName)
     return super.onCreateOptionsMenu(menu)
   }
 
@@ -144,6 +147,24 @@ class HillfortActivity : AppCompatActivity(), AnkoLogger {
         toast(R.string.deleted_hillfort)
         finish()
       }
+/*
+      R.id.item_delete -> {
+
+        val builder = AlertDialog.Builder(this)
+        builder.setMessage("Are you sure you want to Delete this Hillfort?")
+          .setCancelable(false)
+          .setPositiveButton(
+            "Yes")
+          { dialog, id -> app.hillforts.delete(hillfort)
+            toast(R.string.deleted_hillfort)
+            //startActivityForResult(intentFor<HillfortListActivity>().putExtra("user", user))
+            //startActivity( intentFor<HillfortListActivity>().putExtra("user", realUser))
+            startActivityForResult(intentFor<HillfortListActivity>().putExtra("user", user),0)}
+          .setNegativeButton("No", DialogInterface.OnClickListener { dialog, id -> dialog.cancel() })
+        val alert = builder.create()
+        alert.show()
+      }
+*/
 
       R.id.user_logout -> {
         startActivityForResult(intentFor<LoginActivity>(),0)
