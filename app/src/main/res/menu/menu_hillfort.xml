@@ -21,9 +21,15 @@
         android:icon="@drawable/ic_baseline_settings_24"
         android:title="@string/menu_settings"
         app:showAsAction="always" />
-
+<!--
     <item
         android:id="@+id/user_logout"
+        android:title="@string/menu_logout"
+        app:showAsAction="always"/>
+-->
+    <item
+        android:id="@+id/user_logout"
+        android:icon="@drawable/logout"
         android:title="@string/menu_logout"
         app:showAsAction="always"/>
 
