@@ -1,22 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <!--
-    <item
-        android:id="@+id/item_add"
-        android:icon="@android:drawable/ic_menu_add"
-        android:title="@string/menu_addHillfort"
-        app:showAsAction="always" />
 
-
-    -->
-<!--
-    <item
-        android:id="@+id/item_user"
-        android:icon="@drawable/ic_outline_person_outline_24"
-        android:title="@string/menu_userIcon"
-        app:showAsAction="always" />
--->
     <item
         android:id="@+id/user_menu"
         android:title=""
@@ -28,22 +13,15 @@
         android:title="@string/menu_addHillfort"
         app:showAsAction="always" />
 
-
-
     <item
         android:id="@+id/item_settings"
         android:icon="@drawable/ic_baseline_settings_24"
         android:title="@string/menu_settings"
         app:showAsAction="always" />
-<!--
+
     <item
         android:id="@+id/user_logout"
-        android:title="@string/menu_logout"
-        app:showAsAction="always" />
--->
-    <item
-        android:id="@+id/user_logout"
-        android:icon="@drawable/logout"
+        android:icon="@drawable/ic_baseline_exit_to_app_24"
         android:title="@string/menu_logout"
         app:showAsAction="always"/>
 </menu>

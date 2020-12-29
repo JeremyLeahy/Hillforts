@@ -35,7 +35,7 @@ class HillfortListActivity : AppCompatActivity(), HillfortListener, AnkoLogger  
 
         toolbar.title = title
         setSupportActionBar(toolbar)
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        //supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         val layoutManager = LinearLayoutManager(this)
         recyclerView.layoutManager = layoutManager
