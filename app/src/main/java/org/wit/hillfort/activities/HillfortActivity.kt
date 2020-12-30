@@ -1,14 +1,11 @@
-package org.wit.hillforts.activities
+package org.wit.hillfort.activities
 
-import android.content.DialogInterface
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import androidx.appcompat.app.AlertDialog
 import kotlinx.android.synthetic.main.activity_hillfort.*
-import kotlinx.android.synthetic.main.card_hillfort.view.*
 import org.jetbrains.anko.AnkoLogger
 import org.jetbrains.anko.info
 import org.jetbrains.anko.intentFor

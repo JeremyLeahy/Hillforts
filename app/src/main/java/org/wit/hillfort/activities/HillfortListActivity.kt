@@ -1,4 +1,4 @@
-package org.wit.hillforts.activities
+package org.wit.hillfort.activities
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -12,6 +12,7 @@ import org.wit.hillfort.main.MainApp
 import org.wit.hillfort.models.HillfortModel
 import org.wit.hillfort.models.UserModel
 import org.wit.hillforts.R
+import org.jetbrains.anko.startActivity
 
 class HillfortListActivity : AppCompatActivity(), HillfortListener, AnkoLogger  {
 
@@ -62,10 +63,13 @@ class HillfortListActivity : AppCompatActivity(), HillfortListener, AnkoLogger  
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item?.itemId) {
+
             R.id.item_add -> {
                 startActivityForResult(intentFor<HillfortActivity>().putExtra("user", user),0)
             }
 
+            R.id.item_map -> {
+                startActivityForResult(intentFor<HillfortMapsActivity>().putExtra("user", user),0) }
 
             R.id.item_settings -> {
                 startActivityForResult(intentFor<SettingsActivity>().putExtra("user", user),0)

@@ -6,4 +6,5 @@ interface HillfortStore {
     fun update(hillfort: HillfortModel)
     fun delete(hillfort: HillfortModel)
     fun findAllforUser(userModel: UserModel): List<HillfortModel>
+    fun findById(id:Long) : HillfortModel?
 }

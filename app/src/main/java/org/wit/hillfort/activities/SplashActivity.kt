@@ -1,10 +1,9 @@
-package org.wit.hillforts.activities
+package org.wit.hillfort.activities
 
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat.startActivity
 import org.jetbrains.anko.AnkoLogger
 import org.wit.hillforts.R
 

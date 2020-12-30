@@ -13,53 +13,36 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
+        <activity
+            android:name="org.wit.hillfort.activities.HillfortMapsActivity"
+            android:label="@string/title_activity_placemark_maps" />
+
+
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="@string/google_maps_key" />
-
-        <!--  MAP ACTIVITY   -->
+            android:value="@string/google_maps_key" /> <!-- MAP ACTIVITY -->
         <activity
-            android:name=".activities.MapActivity"
+            android:name="org.wit.hillfort.activities.MapActivity"
             android:label="@string/title_activity_map"
-            android:parentActivityName=".activities.HillfortListActivity">
-        </activity>
-
-        <!--   LOGIN ACTIVITY  -->
+            android:parentActivityName="org.wit.hillfort.activities.HillfortListActivity" /> <!-- LOGIN ACTIVITY -->
         <activity
-            android:name=".activities.LoginActivity"
-            android:parentActivityName=".activities.HillfortListActivity">
-        </activity>
-
-        <!--   SIGNUP ACTIVITY  -->
+            android:name="org.wit.hillfort.activities.LoginActivity"
+            android:parentActivityName="org.wit.hillfort.activities.HillfortListActivity" /> <!-- SIGNUP ACTIVITY -->
         <activity
-            android:name=".activities.SignUpActivity"
-            android:parentActivityName=".activities.HillfortListActivity">
-        </activity>
-
-        <!--   SETTINGS ACTIVITY  -->
+            android:name="org.wit.hillfort.activities.SignUpActivity"
+            android:parentActivityName="org.wit.hillfort.activities.HillfortListActivity" /> <!-- SETTINGS ACTIVITY -->
         <activity
-            android:name=".activities.SettingsActivity"
-            android:parentActivityName=".activities.HillfortListActivity">
-        </activity>
-
-     <!--   HILLFORT ACTIVITY  -->
+            android:name="org.wit.hillfort.activities.SettingsActivity"
+            android:parentActivityName="org.wit.hillfort.activities.HillfortListActivity" /> <!-- HILLFORT ACTIVITY -->
         <activity
-            android:name=".activities.HillfortActivity"
-            android:parentActivityName=".activities.HillfortListActivity">
-        </activity>
-
-
-     <!--  HILLFORT LIST ACTIVITY  -->
-        <activity
-            android:name=".activities.HillfortListActivity">
-        </activity>
-
-     <!--  SPLASH ACTIVITY  -->
-        <activity
-            android:name=".activities.SplashActivity">
+            android:name="org.wit.hillfort.activities.HillfortActivity"
+            android:parentActivityName="org.wit.hillfort.activities.HillfortListActivity" /> <!-- HILLFORT LIST ACTIVITY -->
+        <activity android:name="org.wit.hillfort.activities.HillfortListActivity" /> <!-- SPLASH ACTIVITY -->
+        <activity android:name="org.wit.hillfort.activities.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

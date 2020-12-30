@@ -63,4 +63,11 @@
     <string name="deleted_user">User Deleted</string>
 
     <string name="user_exists">user already exists</string>
+
+    <string name="menu_addMap">Add Map</string>
+    <string name="hillfort_title_placeholder">Hillfort Title</string>
+    <string name="hillfort_description_placeholder">Hillfort Description</string>
+    <string name="hillfortPicture">Hillfort Picture</string>
+
+    <string name="title_activity_placemark_maps">Maps</string>
 </resources>

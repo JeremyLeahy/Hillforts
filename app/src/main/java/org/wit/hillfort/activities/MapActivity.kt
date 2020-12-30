@@ -1,4 +1,4 @@
-package org.wit.hillforts.activities
+package org.wit.hillfort.activities
 
 import android.app.Activity
 import android.content.Intent
@@ -8,7 +8,6 @@ import com.google.android.gms.maps.*
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.Marker
 import com.google.android.gms.maps.model.MarkerOptions
-import kotlinx.android.synthetic.main.activity_hillfort_list.*
 import org.wit.hillfort.models.Location
 import org.wit.hillforts.R
 
