@@ -13,6 +13,7 @@ import org.wit.hillfort.models.HillfortModel
 import org.wit.hillfort.models.UserModel
 import org.wit.hillforts.R
 import org.jetbrains.anko.startActivity
+import org.wit.hillforts.activities.FavouritesActivity
 
 class HillfortListActivity : AppCompatActivity(), HillfortListener, AnkoLogger  {
 
@@ -73,6 +74,10 @@ class HillfortListActivity : AppCompatActivity(), HillfortListener, AnkoLogger  
 
             R.id.item_settings -> {
                 startActivityForResult(intentFor<SettingsActivity>().putExtra("user", user),0)
+            }
+
+            R.id.item_favs -> {
+                startActivityForResult(intentFor<FavouritesActivity>().putExtra("user", user),0)
             }
 
             R.id.user_logout -> {
