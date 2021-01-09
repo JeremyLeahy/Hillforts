@@ -3,8 +3,14 @@ package org.wit.hillfort.activities
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
+import android.view.animation.Animation
+import android.view.animation.BounceInterpolator
+import android.view.animation.ScaleAnimation
+import android.widget.CompoundButton
 import kotlinx.android.synthetic.main.activity_hillfort.*
 import org.jetbrains.anko.AnkoLogger
 import org.jetbrains.anko.info
@@ -48,7 +54,9 @@ class HillfortActivity : AppCompatActivity(), AnkoLogger {
       hillfort = intent.extras?.getParcelable<HillfortModel>("hillfort_edit")!!
       hillfortTitle.setText(hillfort.title)
       description.setText(hillfort.description)
+      ratingBar.setRating(hillfort.rating)
       visited.isChecked = hillfort.visited
+      button_favourite.isChecked = hillfort.favourite
       lat.setText(hillfort.lat.toString())
       longitude.setText(hillfort.lng.toString())
       additionalHillfortNotes.setText(hillfort.additionalNotes)
@@ -89,7 +97,9 @@ class HillfortActivity : AppCompatActivity(), AnkoLogger {
       hillfort.user = user
       hillfort.title = hillfortTitle.text.toString()
       hillfort.description = description.text.toString()
+      hillfort.rating = ratingBar.rating
       hillfort.visited = visited.isChecked
+      hillfort.favourite = button_favourite.isChecked
       hillfort.additionalNotes = additionalHillfortNotes.text.toString()
       if (hillfort.title.isEmpty()) {
         //called from strings.xml
@@ -123,7 +133,37 @@ class HillfortActivity : AppCompatActivity(), AnkoLogger {
       startActivityForResult(intentFor<MapActivity>().putExtra("location", location), LOCATION_REQUEST)
     }
 
+    //
 
+    var scaleAnimation = ScaleAnimation(
+      0.7f,
+      1.0f,
+      0.7f,
+      1.0f,
+      Animation.RELATIVE_TO_SELF,
+      0.7f,
+      Animation.RELATIVE_TO_SELF,
+      0.7f
+    )
+
+    scaleAnimation?.setDuration(500)
+
+
+    var bounceInterpolator = BounceInterpolator()
+    scaleAnimation?.setInterpolator(bounceInterpolator)
+
+    button_favourite.setOnCheckedChangeListener(object: View.OnClickListener, CompoundButton.OnCheckedChangeListener {
+      override fun onCheckedChanged(p0: CompoundButton?, p1: Boolean) {
+        p0?.startAnimation(scaleAnimation);
+        Log.d("fav", "am i here") //To change body of created functions use File | Settings | File Templates.
+      }
+
+      override fun onClick(p0: View?) {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+      }
+    });
+
+//
   }
 
 
