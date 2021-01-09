@@ -13,6 +13,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
+        <activity android:name=".activities.FavouritesActivity"></activity>
+
         <activity
             android:name="org.wit.hillfort.activities.HillfortMapsActivity"
             android:label="@string/title_activity_placemark_maps" />
@@ -38,8 +40,9 @@
         <activity
             android:name="org.wit.hillfort.activities.HillfortActivity"
             android:parentActivityName="org.wit.hillfort.activities.HillfortListActivity" /> <!-- HILLFORT LIST ACTIVITY -->
-        <activity android:name="org.wit.hillfort.activities.HillfortListActivity" /> <!-- SPLASH ACTIVITY -->
-        <activity android:name="org.wit.hillfort.activities.SplashActivity">
+        <activity android:name="org.wit.hillfort.activities.HillfortListActivity" />
+        <!-- SPLASH ACTIVITY -->
+        <activity android:name="org.wit.hillfort.views.splash.SplashView">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
