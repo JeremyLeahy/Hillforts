@@ -5,10 +5,12 @@
     android:layout_height="wrap_content"
     android:layout_marginBottom="8dp"
     android:elevation="24dp">
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="16dp">
+
         <ImageView
             android:id="@+id/imageIcon"
             android:layout_width="64dp"
@@ -18,50 +20,23 @@
             android:layout_marginEnd="16dp"
             android:contentDescription="@string/change_hillfort_image" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:id="@+id/verticalLayout"
-            android:layout_below="@+id/hillfortTitle"
-            android:layout_toEndOf="@+id/imageIcon">
-
-
-            <CheckBox
-                android:id="@+id/hillfortVisited"
-                android:layout_width="54dp"
-                android:layout_height="54dp"
-                android:layout_marginLeft="2dp"
-                android:text="@string/visited_checkbox"
-                android:textSize="10dp"
-                android:clickable="false" />
-
-            <RatingBar
-                android:id="@+id/ratingBar"
-                style="@style/CustomRatingBar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/hillfortTitle"
-                android:layout_marginLeft="5dp"
-                android:layout_marginTop="2dp"
-                android:numStars="5"
-                android:progressBackgroundTint="@android:color/holo_orange_dark"
-                android:scaleX=".4"
-                android:scaleY=".4" />
-
-
-            <!--
-                    <CheckBox
-                        android:id="@+id/favoriteCheckbox"
-                        android:text="Favorite"
-                        android:layout_gravity="center"
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        android:layout_toEndOf="@+id/hillfortLoc"
-                        />
-            -->
-
-        </LinearLayout>
+        <CheckBox
+            android:id="@+id/hillfortVisited"
+            android:layout_width="54dp"
+            android:layout_height="54dp"
+            android:layout_below="@+id/imageIcon"
+            android:layout_marginLeft="16dp"
+            android:clickable="false" />
+        <!--
+                <CheckBox
+                    android:id="@+id/favoriteCheckbox"
+                    android:text="Favorite"
+                    android:layout_gravity="center"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_toEndOf="@+id/hillfortLoc"
+                    />
+        -->
 
         <TextView
             android:id="@+id/hillfortTitle"
@@ -70,6 +45,7 @@
             android:layout_alignParentTop="true"
             android:layout_toEndOf="@+id/imageIcon"
             android:textSize="30sp" />
+
         <!--
         <TextView
             android:id="@+id/description"
@@ -85,7 +61,20 @@
             android:layout_toEndOf="@+id/imageIcon"
             android:layout_marginTop="0dp"
             android:paddingTop="2dp"
-            android:layout_below="@id/verticalLayout" />
+            android:layout_below="@id/ratingBar" />
+
+        <RatingBar
+            android:id="@+id/ratingBar"
+            style="@style/CustomRatingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:layout_marginLeft="5dp"
+            android:layout_below="@id/hillfortTitle"
+            android:scaleX=".4"
+            android:scaleY=".4"
+            android:numStars="5"
+            android:progressBackgroundTint="@android:color/holo_orange_dark" />
 
     </RelativeLayout>
 </androidx.cardview.widget.CardView>
